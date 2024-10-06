@@ -1,0 +1,22 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "esnext",
+    "esModuleInterop": true,
+    "target": "ES2020",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*",
+      ]
+    }
+  },
+  "include": ["src/**/*"],
+  "allowImportingTsExtensions": "emitDeclarationOnly",
+}
