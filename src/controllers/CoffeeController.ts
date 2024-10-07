@@ -1,6 +1,6 @@
 import type { Coffee } from "../types.js";
 import { Request, Response } from "express"; 
-import { coffees } from "../data/coffees.js";
+import { coffees } from "../models/coffees.js";
 import { validate } from "uuid"; 
 
 export class CoffeeController {
