@@ -1,22 +1,22 @@
 import dotenv from "dotenv";
-import express, { Request, Response} from "express";
-import { CoffeeController } from "./controllers/CoffeeController.js";
+import express from "express";
+import coffeeRouter from "./routes/coffees.js";
+import errorRouter from "./routes/error.js";
+// import path from "node:path";
+// import expressLayouts from 'express-ejs-layouts';
 
-const app = express();
 dotenv.config();
+const app = express();
 
-app.get('/api/coffees', async (req: Request, res: Response) => {
-    await new CoffeeController().getCoffees(req, res)
-})
+// EJS setup
+// app.use(expressLayouts);
+// app.set('view engine', 'ejs');
+// app.set('views', path.join(path.dirname(import.meta.url), 'views'));
 
-app.get('/api/coffees/:id', async (req: Request, res: Response) => {
-    await new CoffeeController().findCoffee(req, res)
-})
-
-app.get('*', (req: Request, res: Response) => {
-    res.status(404).send('<h1>404 not found.</h1>');
-})
+app.use(coffeeRouter);
+app.use(errorRouter);
 
 app.listen(process.env.PORT, () => { 
     console.log(`server running at localhost:${process.env.PORT}`)
 });
+
