@@ -1,4 +1,4 @@
-import { Coffee } from "./types";
+import { Coffee } from "../types.js";
 
 export const coffees: Coffee[] = [
     {
